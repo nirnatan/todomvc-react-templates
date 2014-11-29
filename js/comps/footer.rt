@@ -1,0 +1,30 @@
+<!doctype rt consts="../consts">
+<footer id="footer">
+    <span id="todo-count" rt-scope="this.props.count as count">
+		<strong>{count}</strong> {count === 1 ? 'item' : 'items'} left
+	</span>
+	<ul id="filters">
+		<li>
+			<a href="#/" rt-class="{selected: this.props.nowShowing === consts.ALL_TODOS}">
+				All
+			</a>
+		</li>
+		{' '}
+		<li>
+			<a href="#/active" rt-class="{selected: this.props.nowShowing === consts.ACTIVE_TODOS}">
+				Active
+			</a>
+		</li>
+		{' '}
+		<li>
+			<a href="#/completed" rt-class="{selected: this.props.nowShowing === consts.COMPLETED_TODOS}">
+				Completed
+			</a>
+		</li>
+	</ul>
+	<button rt-if="this.props.completedCount > 0"
+			id="clear-completed"
+			onClick="{this.props.onClearCompleted}">
+		Clear completed ({this.props.completedCount})
+	</button>
+</footer>

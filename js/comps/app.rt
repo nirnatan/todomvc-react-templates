@@ -1,0 +1,39 @@
+<!doctype rt TodoItem="js/comps/todoItem" TodoFooter="js/comps/footer">
+<div>
+	<header id="header">
+		<h1>todos</h1>
+		<input
+				id="new-todo"
+				placeholder="What needs to be done?"
+				onKeyDown={this.handleNewTodoKeyDown}
+				autoFocus={true}
+				/>
+	</header>
+	<section id="main" rt-if="this.props.model.todos.length">
+		<input
+				id="toggle-all"
+				type="checkbox"
+				onChange="(evt) => this.props.model.toggleAll(evt.target.checked);"
+				checked="{this.getCompletedTodoCount() === 0}"
+				/>
+		<ul id="todo-list">
+			<TodoItem rt-repeat="todo in this.getTodos()"
+					  key="{todo.id}"
+					  todo="{todo}"
+					  onToggle="() => this.props.model.toggle(todo);"
+					  onDestroy="() => this.props.model.destroy(todo);"
+					  onEdit="(callback) => this.setState({editing: todo.id}, function() { callback(); })"
+					  editing="{this.state.editing === todo.id}"
+					  onSave="(text) => this.onSave(todo, text);"
+					  onCancel="() => this.setState({editing: null});"
+					/>
+		</ul>
+	</section>
+	<TodoFooter rt-scope="this.getCompletedTodoCount() as completedCount"
+				rt-if="completedCount || (this.props.model.todos.length - completedCount)"
+				count="{completedCount}"
+				completedCount="{completedCount}"
+				nowShowing="{this.state.nowShowing}"
+				onClearCompleted="() => this.props.model.clearCompleted();"
+			/>
+</div>

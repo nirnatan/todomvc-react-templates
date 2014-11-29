@@ -1,0 +1,18 @@
+<!doctype rt>
+<li rt-class="{completed: this.props.todo.completed, editing: this.props.editing}">
+    <div class="view">
+        <input class="toggle" type="checkbox" checked={this.props.todo.completed} onChange="{this.props.onToggle}" />
+        <label onDoubleClick="{this.handleEdit}">
+            {this.props.todo.title}
+        </label>
+        <button class="destroy" onClick="{this.props.onDestroy}"/>
+    </div>
+    <input
+            ref="editField"
+            class="edit"
+            value="{this.state.editText}"
+            onBlur="{this.handleSubmit}"
+            onChange="() => this.setState({editText: event.target.value});"
+            onKeyDown="{this.handleKeyDown}"
+            />
+</li>
