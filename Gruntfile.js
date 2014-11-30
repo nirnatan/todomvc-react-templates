@@ -43,6 +43,14 @@ module.exports = function (grunt) {
                 options: {
                     spawn: false
                 }
+            },
+            npm: {
+                files: ['package.json'],
+                tasks: ['npm-install']
+            },
+            bower: {
+                files: ['bower.json'],
+                tasks: ['bower:install']
             }
         }
     });
