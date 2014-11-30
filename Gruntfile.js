@@ -62,7 +62,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-shell');
 
     // Default task(s).
-    grunt.registerTask('default', ['shell:rt', 'jshint', 'watch']);
+    grunt.registerTask('default', ['shell:rt', 'jshint']);
 
     grunt.registerTask('all', ['npm-install', 'bower:install', 'default']);
 };
