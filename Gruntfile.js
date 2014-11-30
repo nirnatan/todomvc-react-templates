@@ -4,6 +4,13 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        bower: {
+            install: {
+                options: {
+                    cleanBowerDir: true
+                }
+            }
+        },
         shell: {
             rt: {
                 command: 'rt *.rt',
@@ -40,10 +47,14 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-npm-install');
+    grunt.loadNpmTasks('grunt-bower-installer');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
 
     // Default task(s).
     grunt.registerTask('default', ['shell:rt', 'jshint', 'watch']);
+
+    grunt.registerTask('all', ['npm-install', 'bower:install', 'default']);
 };
