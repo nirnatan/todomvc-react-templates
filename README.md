@@ -6,9 +6,9 @@ This React example integrates React-Templates for its views. It uses requireJs t
 
 > _[React - facebook.github.io/react](http://facebook.github.io/react)_
 
-## Learning React-Templates
+## Getting React-Templates
 
-The [React-Templates repository](http://github.com/wix/react-templates) is a great way to get started.
+The [React-Templates repository](http://github.com/wix/react-templates) is a great way to download and get started.
 
 ## Learning React
 
