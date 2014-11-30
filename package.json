@@ -1,0 +1,30 @@
+{
+  "name": "todomvc-react-templates",
+  "version": "0.0.1",
+  "description": "React TodoMVC Example With React-Templates Integration",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nirnatan/todomvc-react-templates.git"
+  },
+  "keywords": [
+    "todomvc",
+    "react",
+    "react-templates",
+    "rt",
+    "MVC"
+  ],
+  "author": "Nir Natan (nirn@wix.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nirnatan/todomvc-react-templates/issues"
+  },
+  "homepage": "https://github.com/nirnatan/todomvc-react-templates",
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^1.1.1",
+    "jshint-stylish": "^1.0.0",
+    "react-templates": "0.0.1"
+  }
+}

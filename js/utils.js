@@ -1,4 +1,5 @@
 define([], function () {
+    'use strict';
 
     return {
         uuid: function () {
@@ -26,5 +27,5 @@ define([], function () {
             var store = localStorage.getItem(namespace);
             return (store && JSON.parse(store)) || [];
         }
-    }
+    };
 });

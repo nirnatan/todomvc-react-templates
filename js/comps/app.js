@@ -1,4 +1,3 @@
-/*global Router */
 define([
     'lodash',
     'jquery',
@@ -28,7 +27,7 @@ define([
 
         componentDidMount: function () {
             var setState = this.setState;
-            var router = Router({
+            var router = window.Router({
                 '/': setState.bind(this, {nowShowing: consts.ALL_TODOS}),
                 '/active': setState.bind(this, {nowShowing: consts.ACTIVE_TODOS}),
                 '/completed': setState.bind(this, {nowShowing: consts.COMPLETED_TODOS})

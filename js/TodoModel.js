@@ -1,4 +1,5 @@
 define(['lodash', 'js/utils'], function (_, Utils) {
+    'use strict';
 
     var TodoModel = function (key) {
         this.key = key;
