@@ -13,19 +13,13 @@ module.exports = function (grunt) {
         },
         shell: {
             rt: {
-                command: 'rt *.rt',
-                options: {
-                    execOptions: {
-                        cwd: 'js/comps'
-                    }
-                }
+                command: 'node node_modules/react-templates/src/cli.js js/comps/*.rt'
             }
         },
         jshint: {
             all: ['Gruntfile.js', 'js/**/*.js'],
             options: {
                 jshintrc: '.jshintrc',
-                ignores: ['js/**/*.rt.js'],
                 reporter: require('jshint-stylish')
             }
         },

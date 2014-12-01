@@ -1,4 +1,4 @@
-<!doctype rt TodoItem="js/comps/todoItem" TodoFooter="js/comps/footer">
+<!doctype rt todoItem="js/comps/todoItem" todoFooter="js/comps/footer">
 <div>
 	<header id="header">
 		<h1>todos</h1>
@@ -17,7 +17,7 @@
 				checked="{this.getCompletedTodoCount() === 0}"
 				/>
 		<ul id="todo-list">
-			<TodoItem rt-repeat="todo in this.getTodos()"
+			<todoItem rt-repeat="todo in this.getTodos()"
 					  key="{todo.id}"
 					  todo="{todo}"
 					  onToggle="() => this.props.model.toggle(todo);"
@@ -29,7 +29,7 @@
 					/>
 		</ul>
 	</section>
-	<TodoFooter rt-scope="this.getCompletedTodoCount() as completedCount"
+	<todoFooter rt-scope="this.getCompletedTodoCount() as completedCount"
 				rt-if="completedCount || (this.props.model.todos.length - completedCount)"
 				count="{completedCount}"
 				completedCount="{completedCount}"

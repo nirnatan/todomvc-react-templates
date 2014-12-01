@@ -5,7 +5,7 @@ define([
     '../TodoModel',
     '../consts',
     'js/comps/app.rt'
-], function (_, $, React, TodoModel, consts, template) {
+], function (_, $, React, TodoModel, /** Consts */consts, template) {
     'use strict';
 
     var ENTER_KEY = 13;
