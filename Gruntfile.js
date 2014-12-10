@@ -7,13 +7,10 @@ module.exports = function (grunt) {
         bower: {
             install: {
                 options: {
-                    cleanBowerDir: true
+                    cleanBowerDir: true,
+                    install: true,
+                    copy: true
                 }
-            }
-        },
-        shell: {
-            rt: {
-                command: 'node node_modules/react-templates/src/cli.js js/comps/*.rt'
             }
         },
         jshint: {
@@ -26,7 +23,7 @@ module.exports = function (grunt) {
         watch: {
             templates: {
                 files: ['**/*.rt'],
-                tasks: ['shell:rt'],
+                tasks: ['rt'],
                 options: {
                     spawn: false
                 }
@@ -41,11 +38,10 @@ module.exports = function (grunt) {
             npm: {
                 files: ['package.json'],
                 tasks: ['npm-install']
-            },
-            bower: {
-                files: ['bower.json'],
-                tasks: ['bower:install']
             }
+        },
+        'reactTemplates': {
+            src: ['js/**/*.rt']
         }
     });
 
@@ -53,10 +49,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-bower-installer');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-react-templates');
+
 
     // Default task(s).
-    grunt.registerTask('default', ['shell:rt', 'jshint']);
-
+    grunt.registerTask('rt', ['react-templates']);
+    grunt.registerTask('default', ['rt', 'jshint']);
     grunt.registerTask('all', ['npm-install', 'bower:install', 'default']);
 };

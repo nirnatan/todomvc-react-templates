@@ -25,8 +25,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-npm-install": "^0.1.0",
-    "grunt-shell": "^1.1.1",
     "jshint-stylish": "^1.0.0",
-    "react-templates": "0.0.1"
+    "grunt-react-templates": "git+ssh://git@github.com:wix/grunt-react-templates"
   }
 }
